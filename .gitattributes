@@ -1,0 +1,3 @@
+# Plain git storage — do NOT use LFS for chunks
+model_chunks/* -filter -diff -merge -text
+*.part-* -filter -diff -merge -text

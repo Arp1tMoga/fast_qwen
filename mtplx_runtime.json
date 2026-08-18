@@ -1,0 +1,223 @@
+{
+  "arch_id": "qwen3-next-mtp",
+  "artifact_role": "forge-local",
+  "base_trunk": "/Users/youssof/.mtplx/models/Qwen--Qwen3.8-27B",
+  "exactness_baseline": {},
+  "forge_provenance": {
+    "forge_inputs": {
+      "mtp_source_path": "/Users/youssof/.mtplx/models/Qwen--Qwen3.8-27B",
+      "trunk_path": "/Users/youssof/.mtplx/models/Qwen3.8-27B-MTPLX-Optimized-Speed"
+    },
+    "forge_recipe": {
+      "body_bits": 4,
+      "body_group_size": 32,
+      "body_mode": "affine",
+      "module_overrides": [
+        {
+          "bits": 8,
+          "group_size": 64,
+          "suffix": "embed_tokens"
+        },
+        {
+          "bits": 8,
+          "group_size": 64,
+          "suffix": "lm_head"
+        },
+        {
+          "bits": 8,
+          "group_size": 64,
+          "suffix": "linear_attn.out_proj"
+        },
+        {
+          "bits": 8,
+          "group_size": 64,
+          "layers": [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "suffix": "mlp.gate_proj"
+        },
+        {
+          "bits": 8,
+          "group_size": 64,
+          "layers": [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "suffix": "mlp.up_proj"
+        },
+        {
+          "bits": 8,
+          "group_size": 64,
+          "layers": [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "suffix": "mlp.down_proj"
+        }
+      ],
+      "mtp_policy": "keep_bf16"
+    },
+    "forged_at": "2026-08-14T11:28:40-07:00",
+    "forged_locally": true,
+    "mtp_contract": {
+      "base_hidden_variant": "post_norm",
+      "concat_order": "embedding_hidden",
+      "hidden_variant": "post_norm",
+      "mtp_position_mode": "local",
+      "mtp_quant_group_size": 64,
+      "mtp_quant_mode": "affine"
+    },
+    "mtplx_version": "2.6.0",
+    "published_to_hf": null,
+    "source_format": "bf16_native",
+    "source_repo": "/Users/youssof/.mtplx/models/Qwen--Qwen3.8-27B",
+    "source_sha": null,
+    "recommended_profile_note": "Restamped sustained->turbo 2026-08-14 23:50 (mirrors the OQ restamp): the sustained recommendation came from the forge-verify rows; every gated dropday arm, the CLI turbo-default resolution for this public id, and the installed-app receipt (55.5 tok/s, draft 1.0) all served turbo. Served behavior unchanged: under turbo the hidden profile-scoped contract fell back to draft=target sampler (1.0/0.95/20), identical to the recommended_draft_sampler stamp now visible."
+  },
+  "mtp_contract": {
+    "base_hidden_variant": "post_norm",
+    "concat_order": "embedding_hidden",
+    "hidden_variant": "post_norm",
+    "mtp_position_mode": "local",
+    "mtp_quant_group_size": 64,
+    "mtp_quant_mode": "affine"
+  },
+  "mtp_depth_max": 3,
+  "mtp_sidecar": "bf16",
+  "mtplx_version": "2.6.0",
+  "recommended_profile": "turbo",
+  "sampler": {
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "speed_evidence": {
+    "acceptance_by_depth": [
+      0.9790209790209791,
+      0.8671328671328671,
+      0.7762237762237763
+    ],
+    "acceptance_collapsed": [],
+    "depth": 3,
+    "failure_reasons": [],
+    "forge_verify_rows": [
+      {
+        "acceptance_by_position": [],
+        "depth": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "hit_token_budget": false,
+        "hit_token_budget_count": 0,
+        "multiplier_vs_ar": 1.0,
+        "quality_passed": true,
+        "tok_s": 20.991412027515594,
+        "verify_time_s": 56.19218879099935
+      },
+      {
+        "acceptance_by_position": [
+          0.9635416666666666
+        ],
+        "depth": 1,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "hit_token_budget": false,
+        "hit_token_budget_count": 0,
+        "multiplier_vs_ar": 1.848048265782575,
+        "quality_passed": true,
+        "tok_s": 38.79314259377768,
+        "verify_time_s": 21.435596173687372
+      },
+      {
+        "acceptance_by_position": [
+          0.9818731117824774,
+          0.918429003021148
+        ],
+        "depth": 2,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "hit_token_budget": false,
+        "hit_token_budget_count": 0,
+        "multiplier_vs_ar": 1.210236493022171,
+        "quality_passed": true,
+        "tok_s": 25.40457287576389,
+        "verify_time_s": 38.888131326646544
+      },
+      {
+        "acceptance_by_position": [
+          0.9790209790209791,
+          0.8671328671328671,
+          0.7762237762237763
+        ],
+        "depth": 3,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "hit_token_budget": false,
+        "hit_token_budget_count": 0,
+        "multiplier_vs_ar": 2.4180184402971334,
+        "quality_passed": true,
+        "tok_s": 50.75762137040775,
+        "verify_time_s": 8.885614896658808
+      }
+    ],
+    "greedy_diagnostic": {
+      "tok_s": 20.991412027515594
+    },
+    "quality_rejected": [],
+    "tok_s": [
+      50.75762137040775
+    ],
+    "verdict": "mtp_depth_wins"
+  },
+  "verified_on": {
+    "hardware": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+    "machine_arch": "arm64",
+    "macos": "26.3.1",
+    "model": "Qwen3.8-27B-MTPLX-Optimized-Speed",
+    "timestamp": "2026-08-14T11:28:40-07:00"
+  },
+  "recommended_draft_sampler": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "mtp_depth_default": 3,
+  "release_validation": {
+    "dropday_draft_sampler_abba": {
+      "stamped_at": "2026-08-14T21:45:00-07:00",
+      "basis": "dropday uncapped ABBA campaign (clean-receipts.jsonl, temp 1.0 xhigh/medium, die-gated, max fans verified)",
+      "decode_tps_blended_draft_0_6": [
+        30.4,
+        33.6
+      ],
+      "decode_tps_blended_draft_1_0": [
+        35.1,
+        37.3
+      ],
+      "workload": "simple flappy xhigh uncapped (20k-44k tokens, EOS stop)",
+      "verdict": "draft_temperature_1_0 (+13% blended)"
+    }
+  }
+}

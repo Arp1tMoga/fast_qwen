@@ -1,0 +1,6 @@
+# Ignore locally-merged large files (they are reconstructed via merge_model.sh)
+# Uncomment to keep clone slim — chunks remain in model_chunks/
+# *.safetensors
+# Keep manifests and hashes
+!*.sha256
+!manifest.json

@@ -1,0 +1,17 @@
+{
+  "image_processor": {
+    "image_processor_type": "Qwen2VLImageProcessor",
+    "size": {
+      "longest_edge": 16777216,
+      "shortest_edge": 65536
+    }
+  },
+  "processor_class": "Qwen3VLProcessor",
+  "video_processor": {
+    "size": {
+      "longest_edge": 25165824,
+      "shortest_edge": 4096
+    },
+    "video_processor_type": "Qwen3VLVideoProcessor"
+  }
+}

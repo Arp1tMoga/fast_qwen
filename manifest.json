@@ -1,0 +1,14 @@
+{
+  "chunk_size": "90M",
+  "threshold_bytes": 94371840,
+  "generated_at": "2026-08-18T16:27:07Z",
+  "source": "/home/arpit/.mtplx/models/Youssofal--Qwen3.8-27B-MTPLX-Optimized-Speed",
+  "files": [
+    {"file":"model-00001-of-00004.safetensors","size":5355017068,"sha256":"aed435f4011667af7772fee7ccec90c86f5a6c85649ef74fe6e397a7504b4578","parts":57,"chunk_size":"90M"},
+    {"file":"model-00002-of-00004.safetensors","size":5326635766,"sha256":"3f1960306e36255b7f0c7e80c742f03d96131561b766b1f6af9ca138ff77f939","parts":57,"chunk_size":"90M"},
+    {"file":"model-00003-of-00004.safetensors","size":5362328225,"sha256":"6525c0edae616c0f62b69fc190268c69bdf7a18b0b2ad3de007f3e4464387471","parts":57,"chunk_size":"90M"},
+    {"file":"model-00004-of-00004.safetensors","size":3478828572,"sha256":"cef192620e5ecb23eaac19d2c041edc44d9cbb9fb10265bf1213b649c3eae0d9","parts":37,"chunk_size":"90M"},
+    {"file":"model-vision.safetensors","size":921497225,"sha256":"964bef26c740bdb6fe464b4c7c48840d4c952ea597c181c41cb131c65ea3c5d5","parts":10,"chunk_size":"90M"},
+    {"file":"mtp.safetensors","size":849400403,"sha256":"4468f39621de68a19ffd0bcb2e2e2f352205def7436a625b3427e3752866c287","parts":10,"chunk_size":"90M"}
+  ]
+}
