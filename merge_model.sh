@@ -24,16 +24,18 @@ EXPECTED_SHAS=()
 
 if [[ -f "$MANIFEST" ]] && command -v python3 >/dev/null 2>&1; then
   echo ">> Reading $MANIFEST ..."
-  mapfile -t _lines < <(python3 -c "
-import json,sys
-m=json.load(open('$MANIFEST'))
-for f in m.get('files',[]):
-    print(f['file']+'\t'+str(f['size'])+'\t'+f['sha256'])
-")
-  for l in "${_lines[@]}"; do
-    IFS=$'\t' read -r fname fsize fsha <<< "$l"
+  while IFS=$'\t' read -r fname fsize fsha; do
     FILES+=("$fname"); EXPECTED_SIZES+=("$fsize"); EXPECTED_SHAS+=("$fsha")
-  done
+  done < <(python3 -c "
+import json,signal,sys
+signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+try:
+    m=json.load(open('$MANIFEST'))
+    for f in m.get('files',[]):
+        print(f['file']+'\t'+str(f['size'])+'\t'+f['sha256'])
+except BrokenPipeError:
+    sys.exit(0)
+")
 else
   echo ">> No manifest or no python3 — discovering parts in $DIR ..."
   declare -A seen

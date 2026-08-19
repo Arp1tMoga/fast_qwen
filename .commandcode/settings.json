@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(git fetch origin 2>&1; echo \"---fetch exit:$?---\"; git log --oneline origin/main -3; echo \"---local---\"; git log --oneline -3; echo \"---status---\"; git status --short | head -20)",
+      "Shell(timeout 120 git push 2>&1; echo \"EXIT:$?\")"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

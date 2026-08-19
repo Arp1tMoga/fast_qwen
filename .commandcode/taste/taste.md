@@ -1,0 +1,2 @@
+- Prefers analysis and explanation of root problem and proposed fix before any code changes are made (review-first workflow). Confidence: 0.95
+- Requires shell scripts to be portable to macOS default bash 3.2 (avoids bash 4+ features like mapfile, uses while-read loops) and to handle SIGPIPE/BrokenPipeError gracefully. Confidence: 0.88
