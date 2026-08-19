@@ -1,3 +1,4 @@
 # Plain git storage — do NOT use LFS for chunks
-model_chunks/* -filter -diff -merge -text
-*.part-* -filter -diff -merge -text
+# -delta = skip delta search, huge CPU/RAM saving on incompressible .safetensors (was OOM with 8 threads)
+model_chunks/** -delta -filter -diff -merge -text
+*.part-* -delta -filter -diff -merge -text
