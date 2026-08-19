@@ -45,6 +45,8 @@ git config pack.window 0 >/dev/null 2>&1 || true
 git config pack.compression 0 >/dev/null 2>&1 || true
 git config pack.deltaCacheSize 0 >/dev/null 2>&1 || true
 git config core.compression 0 >/dev/null 2>&1 || true
+git config gc.auto 0 >/dev/null 2>&1 || true
+git config maintenance.auto false >/dev/null 2>&1 || true
 
 # If there are already committed but unpushed batches, push them first
 ahead=$(git rev-list --count origin/main..HEAD 2>/dev/null || echo 0)
